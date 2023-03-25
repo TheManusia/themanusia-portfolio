@@ -30,16 +30,6 @@ export const Navbar = () => {
                     <div className="p-4 flex flex-row items-center justify-between">
                         <a href="#"
                            className="flex flex-row text-lg font-semibold tracking-widest text-gray-900 rounded-lg focus:outline-none focus:shadow-outline">
-                            <img
-                                className="block h-8 w-auto lg:hidden"
-                                src="https://ik.imagekit.io/6fnl649yp/icon/reimu.png?updatedAt=1679770203990"
-                                alt="TheManusia"
-                            />
-                            <img
-                                className="hidden h-8 w-auto lg:block"
-                                src="https://ik.imagekit.io/6fnl649yp/icon/reimu.png?updatedAt=1679770203990"
-                                alt="TheManusia"
-                            />
                             <span className="pl-2">TheManusia</span>
                         </a>
                         <button className="md:hidden rounded-lg focus:outline-none focus:shadow-outline"
