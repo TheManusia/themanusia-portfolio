@@ -60,11 +60,11 @@ export const About = () => {
                     <div className="absolute z-10 pt-32 md:pt-40 p-10 md:p-20 md:pr-10">
                         <TypeAnimation
                             sequence={[
-                                "Hello!\nI am Ian",
+                                "Hello! I am\nIan",
                                 2000,
-                                "Hello!\nI am a Student",
+                                "Hello! I am\na Student",
                                 1000,
-                                "Hello!\nI am a Programmer",
+                                "Hello! I am\na Programmer",
                                 1000,
                             ]}
                             wrapper={"div"}
