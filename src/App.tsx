@@ -7,21 +7,24 @@ import {Experience} from "./components/Experience";
 import {Projects} from "./components/Projects";
 import {Contact} from "./components/Contact";
 import {Footer} from "./components/Footer";
+import {ParallaxProvider} from "react-scroll-parallax";
 
 function App() {
     return (
-        <div className="App">
-            <Navbar/>
-            <main className="relative overflow-y-scroll no-scrollbar">
-                <About/>
-                <Skill/>
-                <Education/>
-                <Experience/>
-                <Projects/>
-                <Contact/>
-            </main>
-            <Footer/>
-        </div>
+        <ParallaxProvider>
+            <div className="App">
+                <Navbar/>
+                <main className="relative overflow-y-scroll no-scrollbar">
+                    <About/>
+                    <Skill/>
+                    <Education/>
+                    <Experience/>
+                    <Projects/>
+                    <Contact/>
+                </main>
+                <Footer/>
+            </div>
+        </ParallaxProvider>
     );
 }
 
