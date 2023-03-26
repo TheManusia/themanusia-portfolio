@@ -4,8 +4,8 @@ export const About = () => {
     return (
         <div className="w-screen h-screen bg-white pb-20" id="about">
             <div className="flex flex-row w-full h-full">
-                <div className="basis-2/5 relative flex grid justify-start content-start tracking-widest font-thin">
-                    <div className="absolute z-0 p-20 rotate-90">
+                <div className="md:basis-3/5 md:relative flex grid justify-start content-start tracking-widest font-thin">
+                    <div className="absolute z-0 p-10 md:p-20 rotate-90">
                         <svg width="156" height="201" viewBox="0 0 390 503" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M39.2842 404.104L58.8769 423.697" stroke="#010101" strokeWidth="1.65" strokeLinecap="round" strokeLinejoin="round"/>
                             <path d="M-27.9849 336.801L8.02874 372.848" stroke="#010101" strokeWidth="1.65" strokeLinecap="round" strokeLinejoin="round"/>
@@ -30,12 +30,12 @@ export const About = () => {
                             <path d="M251.467 49.2871L270.432 68.252" stroke="#010101" strokeWidth="1.65" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                     </div>
-                    <div className="absolute z-10 pt-40 p-20">
-                        <div className="text-8xl pb-3">My name</div>
-                        <div className="text-8xl pb-8">is&nbsp;
+                    <div className="absolute z-10 pt-32 md:pt-40 p-10 md:p-20">
+                        <div className="text-7xl md:text-8xl pb-3">My name</div>
+                        <div className="text-7xl md:text-8xl pb-8">is&nbsp;
                             <div className="inline font-medium">Ian</div>
                         </div>
-                        <p className="text-base pb-8">I am a electrical engineering student with 3 years of experience in programming</p>
+                        <p className="text-base pb-8">I am a electrical engineering student with 3 years of experience in building and developing software</p>
                         <div className="flex pb-8">
                             <button className="bg-orange hover:bg-orange-700 text-white font-bold py-3 px-8 mr-2 rounded">
                                 Hire Me
@@ -48,11 +48,10 @@ export const About = () => {
                         </div>
                     </div>
                 </div>
-                <div className="basis-1/5"></div>
-                <div className="basis-2/5 grid flex justify-start content-center">
+                <div className="basis-2/5 hidden md:grid flex justify-start content-center">
                     <div className="relative inline-block grid image">
-                        <img className="block w-auto h-[28rem] self-center z-0 m-10"
-                             src="https://ik.imagekit.io/6fnl649yp/portfolio/prof-pic3.png?updatedAt=1679803387186"
+                        <img className="block w-auto h-96 lg:h-[28rem] self-center z-0 m-10"
+                             src="https://ik.imagekit.io/6fnl649yp/portfolio/prof-pic2.png?updatedAt=1679797839236"
                              alt="Ian"/>
                         <div className="absolute z-10 top-0 right-0">
                             <svg width="89" height="104" viewBox="0 0 222 260" fill="none"
