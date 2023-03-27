@@ -1,7 +1,7 @@
-export const Projects = () => {
-    return (
-        <div className="w-screen h-screen bg-white">
+import React from 'react';
 
-        </div>
-    );
-};
+export const Projects = () => (
+	<div className='w-screen h-screen bg-white'>
+
+	</div>
+);

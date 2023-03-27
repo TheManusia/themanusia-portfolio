@@ -1,7 +1,7 @@
-export const Education = () => {
-    return (
-        <div className="w-screen h-screen bg-white">
+import React from 'react';
 
-        </div>
-    );
-};
+export const Education = () => (
+	<div className='w-screen h-screen bg-white'>
+
+	</div>
+);

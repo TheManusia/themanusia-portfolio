@@ -1,7 +1,7 @@
-export const Experience = () => {
-    return (
-        <div className="w-screen h-screen bg-orange">
+import React from 'react';
 
-        </div>
-    );
-};
+export const Experience = () => (
+	<div className='w-screen h-screen bg-orange'>
+
+	</div>
+);
