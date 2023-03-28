@@ -21,6 +21,45 @@ function App() {
         thumbsSwiper?.slideTo(index, (1000 + (index * 100)), false);
     };
 
+    function handleSlideChangeTransitionEnd(swiper: SwiperCore) {
+        let acs = document.querySelectorAll(".swiper-slide-active")[0];
+        let hasVerticalScrollbar = acs.scrollHeight > acs.clientHeight;
+
+        if (hasVerticalScrollbar) {
+            let scrollHeight = acs.scrollHeight;
+            let slideSize = acs.clientHeight;
+            let scrollDifferenceTop = scrollHeight - slideSize;
+
+            acs.addEventListener("wheel", (e: any) => {
+                let scrollTop = acs.scrollTop;
+                let scrollDifference = scrollHeight - (scrollTop + slideSize);
+                let delta;
+
+                if (e.wheelDelta) {
+                    delta = e.wheelDelta;
+                } else {
+                    delta = -1 * e.deltaY;
+                }
+
+                if (delta < 0) {
+                    if (scrollDifference == 0) {
+                        swiper.mousewheel.enable();
+                    } else {
+                        swiper.mousewheel.disable();
+                    }
+                } else if (delta > 0) {
+                    if (scrollDifference == scrollDifferenceTop) {
+                        swiper.mousewheel.enable();
+                    } else {
+                        swiper.mousewheel.disable();
+                    }
+                }
+            })
+        } else {
+            swiper.mousewheel.enable();
+        }
+    }
+
     return (
         <ParallaxProvider>
             <div className="App">
@@ -32,11 +71,11 @@ function App() {
                     slidesPerView={"auto"}
                     threshold={30}
                     spaceBetween={0}
-                    freeMode={true}
                     keyboard={{
                         pageUpDown: true,
                         enabled: true,
                     }}
+                    onSlideChangeTransitionEnd={handleSlideChangeTransitionEnd}
                     direction={"vertical"}
                     mousewheel={{releaseOnEdges: true, thresholdTime: 100, thresholdDelta: 15}}
                     observer={!0}
@@ -48,7 +87,7 @@ function App() {
                             <About/>
                         </div>
                     </SwiperSlide>
-                    <SwiperSlide><Skill/></SwiperSlide>
+                    <SwiperSlide className="overflow-auto"><Skill/></SwiperSlide>
                     <SwiperSlide><Education/></SwiperSlide>
                     <SwiperSlide><Experience/></SwiperSlide>
                     <SwiperSlide><Projects/></SwiperSlide>
