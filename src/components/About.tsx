@@ -1,6 +1,5 @@
 import {ArrowTopRightOnSquareIcon} from "@heroicons/react/24/solid";
 import {motion} from "framer-motion";
-import {Parallax} from "react-scroll-parallax";
 import {TypeAnimation} from "react-type-animation";
 
 export const About = () => {
@@ -76,7 +75,9 @@ export const About = () => {
                             initial={{opacity: 0, x: -50}}
                             animate={{x: 0, opacity: 1}}
                             transition={{ease: "easeOut", duration: 0.5, delay: 0.5}}
-                            className="text-base pb-8 pr-20">I am a electrical engineering student with 3 years of experience in building and developing software</motion.p>
+                            className="text-base pb-8 pr-20">I am a electrical engineering student with 3 years of
+                            experience in building and developing software
+                        </motion.p>
                         <motion.div
                             initial={{opacity: 0, x: -50}}
                             animate={{x: 0, opacity: 1}}
@@ -102,42 +103,36 @@ export const About = () => {
                                     transition={{ease: "easeOut", duration: 0.5}}
                                     src="https://ik.imagekit.io/6fnl649yp/portfolio/prof-pic2.png?updatedAt=1679797839236"
                                     alt="Ian"/>
-                        <Parallax
-                            speed={-10}
+                        <motion.div
+                            initial={{opacity: 0, scale: 0.5, rotate: 90}}
+                            animate={{opacity: 1, scale: 1, rotate: 0}}
+                            transition={{ease: "easeOut", duration: 0.5, delay: 0.5}}
                             className="absolute z-10 top-0 right-0">
-                            <motion.div
-                                initial={{opacity: 0, scale: 0.5, rotate: 90}}
-                                animate={{opacity: 1, scale: 1, rotate: 0}}
-                                transition={{ease: "easeOut", duration: 0.5, delay: 0.5}}>
-                                <svg width="89" height="104" viewBox="0 0 222 260" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M175.131 46.4463L115.56 106.017L55.9891 46.4463L9.27051 93.1648L68.8416 152.736L9.27051 212.307L55.9891 259.026L115.56 199.455L175.131 259.026L221.85 212.307L162.279 152.736L221.85 93.1648L175.131 46.4463Z"
-                                        fill="#010101"/>
-                                    <path
-                                        d="M167.433 1.28076L107.862 60.8519L48.2907 1.28076L1.53906 47.9993L61.1102 107.57L1.53906 167.142L48.2907 213.893L107.862 154.322L167.433 213.893L214.151 167.142L154.58 107.57L214.151 47.9993L167.433 1.28076Z"
-                                        stroke="#FAA916" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
-                            </motion.div>
-                        </Parallax>
-                        <Parallax
-                            speed={10}
+                            <svg width="89" height="104" viewBox="0 0 222 260" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M175.131 46.4463L115.56 106.017L55.9891 46.4463L9.27051 93.1648L68.8416 152.736L9.27051 212.307L55.9891 259.026L115.56 199.455L175.131 259.026L221.85 212.307L162.279 152.736L221.85 93.1648L175.131 46.4463Z"
+                                    fill="#010101"/>
+                                <path
+                                    d="M167.433 1.28076L107.862 60.8519L48.2907 1.28076L1.53906 47.9993L61.1102 107.57L1.53906 167.142L48.2907 213.893L107.862 154.322L167.433 213.893L214.151 167.142L154.58 107.57L214.151 47.9993L167.433 1.28076Z"
+                                    stroke="#FAA916" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                        </motion.div>
+                        <motion.div
+                            initial={{opacity: 0, scale: 0.5, rotate: -90}}
+                            animate={{opacity: 1, scale: 1, rotate: 0}}
+                            transition={{ease: "easeOut", duration: 0.5, delay: 1}}
                             className="absolute z-10 bottom-0 left-0">
-                            <motion.div
-                                initial={{opacity: 0, scale: 0.5, rotate: -90}}
-                                animate={{opacity: 1, scale: 1, rotate: 0}}
-                                transition={{ease: "easeOut", duration: 0.5, delay: 1}}>
-                                <svg width="63" height="74" viewBox="0 0 222 260" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M175.131 46.4463L115.56 106.017L55.9891 46.4463L9.27051 93.1648L68.8416 152.736L9.27051 212.307L55.9891 259.026L115.56 199.455L175.131 259.026L221.85 212.307L162.279 152.736L221.85 93.1648L175.131 46.4463Z"
-                                        fill="#010101"/>
-                                    <path
-                                        d="M167.433 1.28076L107.862 60.8519L48.2907 1.28076L1.53906 47.9993L61.1102 107.57L1.53906 167.142L48.2907 213.893L107.862 154.322L167.433 213.893L214.151 167.142L154.58 107.57L214.151 47.9993L167.433 1.28076Z"
-                                        stroke="#FAA916" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
-                            </motion.div>
-                        </Parallax>
+                            <svg width="63" height="74" viewBox="0 0 222 260" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M175.131 46.4463L115.56 106.017L55.9891 46.4463L9.27051 93.1648L68.8416 152.736L9.27051 212.307L55.9891 259.026L115.56 199.455L175.131 259.026L221.85 212.307L162.279 152.736L221.85 93.1648L175.131 46.4463Z"
+                                    fill="#010101"/>
+                                <path
+                                    d="M167.433 1.28076L107.862 60.8519L48.2907 1.28076L1.53906 47.9993L61.1102 107.57L1.53906 167.142L48.2907 213.893L107.862 154.322L167.433 213.893L214.151 167.142L154.58 107.57L214.151 47.9993L167.433 1.28076Z"
+                                    stroke="#FAA916" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                        </motion.div>
                     </div>
                 </div>
             </div>
