@@ -14,7 +14,7 @@ function App() {
         <ParallaxProvider>
             <div className="App">
                 <Navbar/>
-                <main className="relative overflow-y-scroll no-scrollbar">
+                <main className="relative">
                     <About/>
                     <Skill/>
                     <Education/>

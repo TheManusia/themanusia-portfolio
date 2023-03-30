@@ -1,6 +1,6 @@
 export const Education = () => {
     return (
-        <div className="w-screen h-screen bg-white">
+        <div className="w-full h-screen bg-white" id="educations">
 
         </div>
     );

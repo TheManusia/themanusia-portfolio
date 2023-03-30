@@ -1,6 +1,6 @@
 export const Contact = () => {
     return (
-        <div className="w-screen h-screen bg-orange">
+        <div className="w-full h-screen bg-orange" id="contact">
 
         </div>
     );

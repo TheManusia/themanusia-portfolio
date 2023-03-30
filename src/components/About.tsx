@@ -6,7 +6,7 @@ import {TypeAnimation} from "react-type-animation";
 export const About = () => {
 
     return (
-        <div className="w-screen h-full bg-white pb-20" id="about">
+        <div className="w-full h-screen bg-white pb-20" id="about">
             <div className="flex flex-row w-full h-full">
                 <div
                     className="md:basis-3/5 md:relative flex grid justify-start content-start tracking-widest font-thin">
