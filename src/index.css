@@ -3,15 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-    #root, .App {
-        height: 100%;
-    }
-    html,
-    body {
-        position: relative;
-        height: 100%;
-    }
-
     html {
         font-family: Rubik, sans-serif;
         scroll-behavior: smooth;
@@ -41,13 +32,4 @@
     bottom: 0;
     left: 0;
     z-index: 99;
-}
-
-.swiper {
-    width: 100%;
-    height: 100%;
-}
-
-.swiper-slide.footer {
-    height: fit-content;
 }

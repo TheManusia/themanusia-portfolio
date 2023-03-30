@@ -1,16 +1,7 @@
 import {Bars3Icon, XMarkIcon} from "@heroicons/react/24/solid";
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 
-const navElements = [
-    "About",
-    "Skills",
-    "Educations",
-    "Experiences",
-    "Projects",
-    "Contact",
-];
-
-export const Navbar = ({goToPage}: { goToPage: Function }) => {
+export const Navbar = () => {
     const [open, setOpen] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
     const handleScroll = () => {
@@ -40,25 +31,27 @@ export const Navbar = ({goToPage}: { goToPage: Function }) => {
         setOpen(!open);
     }
 
-    const goToSection = (index: number, section: string, e: { preventDefault: () => void }) => {
+    function goToSection(section: string, e: { preventDefault: () => void }) {
+        let sec = document.getElementById(section);
         e.preventDefault();  // Stop Page Reloading
-        console.log(index);
-        goToPage(index);
+        sec && sec.scrollIntoView({ behavior: "smooth", block: "start" });
         window.history.pushState(section, section, `/${section}`);
-    };
+    }
 
     function goToTop(event: { preventDefault: () => void }) {
-        goToSection(0, "", event);
+        window.scrollTo({top: 0, behavior: "smooth"});
+        event.preventDefault();
+        window.history.pushState("", "", `/`);
     }
 
     return (
-        <header className="top-0 z-50">
+        <header className="sticky top-0 z-50">
             <div className={`w-full text-gray-700 bg-white ${scrollPosition > 0 ? "shadow-md" : ""}`}>
                 <div
                     className="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
                     <div className="p-4 flex flex-row items-center justify-between">
                         <a href="/"
-                           onClick={goToTop}
+                            onClick={goToTop}
                            className="flex flex-row text-lg font-semibold tracking-widest text-gray-900 rounded-lg focus:outline-none focus:shadow-outline">
                             <span className="pl-2">TheManusia</span>
                         </a>
@@ -70,18 +63,27 @@ export const Navbar = ({goToPage}: { goToPage: Function }) => {
                     </div>
                     <nav
                         className={`${open ? "flex" : "hidden"} flex-col flex-grow pb-4 md:pb-0 md:flex md:justify-end md:flex-row`}>
-                        {navElements.map((element, index) => {
-                            return (
-                                <a className="px-4 py-2 mt-2 text-sm font-semibold text-gray-900 rounded-lg md:mt-0 hover:text-gray-900 hover:bg-gray-200"
-                                   onClick={event => goToSection(index, element.toLowerCase(), event)}
-                                   key={index}
-                                   href="/">{element}</a>
-                            );
-                        })}
+                        <a className="px-4 py-2 mt-2 text-sm font-semibold text-gray-900 rounded-lg md:mt-0 hover:text-gray-900 hover:bg-gray-200"
+                           onClick={event => goToSection("about", event)}
+                           href="/">About</a>
+                        <a className="px-4 py-2 mt-2 text-sm font-semibold text-gray-900 rounded-lg md:mt-0 hover:text-gray-900 hover:bg-gray-200"
+                           onClick={event => goToSection("skills", event)}
+                           href="/">Skills</a>
+                        <a className="px-4 py-2 mt-2 text-sm font-semibold text-gray-900 rounded-lg md:mt-0 hover:text-gray-900 hover:bg-gray-200"
+                           onClick={event => goToSection("educations", event)}
+                           href="/">Educations</a>
+                        <a className="px-4 py-2 mt-2 text-sm font-semibold text-gray-900 rounded-lg md:mt-0 hover:text-gray-900 hover:bg-gray-200"
+                           onClick={event => goToSection("experiences", event)}
+                           href="/">Experiences</a>
+                        <a className="px-4 py-2 mt-2 text-sm font-semibold text-gray-900 rounded-lg md:mt-0 hover:text-gray-900 hover:bg-gray-200"
+                           onClick={event => goToSection("projects", event)}
+                           href="/">Projects</a>
+                        <a className="px-4 py-2 mt-2 text-sm font-semibold text-gray-900 rounded-lg md:mt-0 hover:text-gray-900 hover:bg-gray-200"
+                           onClick={event => goToSection("contact", event)}
+                           href="/">Contact</a>
                     </nav>
                 </div>
             </div>
         </header>
-
     );
 };
