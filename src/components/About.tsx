@@ -2,12 +2,20 @@ import {ArrowTopRightOnSquareIcon} from "@heroicons/react/24/solid";
 import {motion} from "framer-motion";
 import {Parallax} from "react-scroll-parallax";
 import {TypeAnimation} from "react-type-animation";
+import {useEffect, useRef, useState} from "react";
 
 export const About = () => {
+    const aboutRef = useRef(null);
+    const [aboutElement, setAboutElement] = useState();
+
+    useEffect(() => {
+        if (aboutRef.current)
+            setAboutElement(aboutRef.current);
+    }, []);
 
     return (
-        <div className="w-full h-screen bg-white pb-20" id="about">
-            <div className="flex flex-row w-full h-full">
+        <div className="relative w-full h-screen" id="about" ref={aboutRef}>
+            <div className="absolute flex flex-row w-full h-full bg-white pb-20">
                 <div
                     className="md:basis-3/5 md:relative flex grid justify-start content-start tracking-widest font-thin">
                     <div className="absolute z-0 p-10 md:p-20 rotate-90">
@@ -76,7 +84,9 @@ export const About = () => {
                             initial={{opacity: 0, x: -50}}
                             animate={{x: 0, opacity: 1}}
                             transition={{ease: "easeOut", duration: 0.5, delay: 0.5}}
-                            className="text-base pb-8 pr-20">I am a electrical engineering student with 3 years of experience in building and developing software</motion.p>
+                            className="text-base pb-8 pr-20">I am a electrical engineering student with 3 years of
+                            experience in building and developing software
+                        </motion.p>
                         <motion.div
                             initial={{opacity: 0, x: -50}}
                             animate={{x: 0, opacity: 1}}
@@ -104,7 +114,8 @@ export const About = () => {
                                     alt="Ian"/>
                         <Parallax
                             speed={-10}
-                            className="absolute z-10 top-0 right-0">
+                            rotate={[0, 360]}
+                            className="absolute z-20 top-0 right-0">
                             <motion.div
                                 initial={{opacity: 0, scale: 0.5, rotate: 90}}
                                 animate={{opacity: 1, scale: 1, rotate: 0}}
@@ -122,7 +133,8 @@ export const About = () => {
                         </Parallax>
                         <Parallax
                             speed={10}
-                            className="absolute z-10 bottom-0 left-0">
+                            rotate={[0, 360]}
+                            className="absolute z-20 bottom-0 left-0">
                             <motion.div
                                 initial={{opacity: 0, scale: 0.5, rotate: -90}}
                                 animate={{opacity: 1, scale: 1, rotate: 0}}
@@ -141,6 +153,12 @@ export const About = () => {
                     </div>
                 </div>
             </div>
+            <Parallax
+                translateY={[200, 0]}
+                className="absolute z-40 bg-orange w-full h-screen"
+                targetElement={aboutElement}>
+                <div className=""/>
+            </Parallax>
         </div>
     );
 };
